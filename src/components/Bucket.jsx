@@ -27,17 +27,17 @@ function Bucket(props) {
     // TODO: Add a className of `bucket row complete ${item.eagerness}` for completed items, and `bucket-row ${item.eagerness}` for non-completed items
     // TODO: Add a key attribute set to the value of the index position
     // Hint: use a ternary operator
-    <div className={ } key={}>
+    <div className={ completeBucketItem ? `bucket row complete ${item.eagerness}` : `bucket-row ${item.eagerness}`} key={id}>
 
       // TODO: Add an onClick event that invokes the `completeBucketItem` method passing the item id as a argument
-      <div key={} onClick={}>
+      <div key={id} onClick={() => completeBucketItem()}>
           {/* TODO: Add the item text here */}
       </div>
       <div className="icons">
         // TODO: Add an onClick event update the `edit` object with the `id`, `value`, and `eagerness` properties
-        <p onClick={}> ✏️</p>
+        <p onClick={item.eagerness}> ✏️</p>
         {/* TODO: Add an onClick event that will invoke the removeBucketItem method passing in the `item.id` */}
-        <p onClick={}> 🗑️</p>
+        <p onClick={() => removeBucketItem()}> 🗑️</p>
       </div>
     </div>
   ));
